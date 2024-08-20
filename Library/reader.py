@@ -14,9 +14,12 @@ def reader_code():
             if choose == 1:
                 tittle = input("Введите название книги которую нужно найти: ")
                 result = creator.search_book(tittle)
-                print(f"---\nНазвание: {result["tittle"]}\n"
-                      f"Год: {result["year"]}\n"
-                      f"Автор: {result["author"]}\n---")
+                if result is not None:
+                    print(f"---\nНазвание: {result["tittle"]}\n"
+                          f"Год: {result["year"]}\n"
+                          f"Автор: {result["author"]}\n---")
+                else:
+                    print("---\nИскомая книга не найдена\n---")
         else:
             print("Такого выбора нет")
         choose = int(input(interface))

@@ -71,7 +71,7 @@ class BookList(BookProduct):
         if index is not None:
             return BookList.book_list[index]
         else:
-            return "Искомая книга не существует"
+            return None
 
     def save_to_json(self):
         with open(f"book_list.json", "w", encoding="utf-8") as fh:

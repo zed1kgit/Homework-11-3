@@ -35,9 +35,12 @@ def librian_code():
             elif choose == 4:
                 tittle = input("Введите название книги которую нужно найти: ")
                 result = creator.search_book(tittle)
-                print(f"---\ntittle: {result["tittle"]}\n"
-                      f"year: {result["year"]}\n"
-                      f"author: {result["author"]}\n---")
+                if result is not None:
+                    print(f"---\ntittle: {result["tittle"]}\n"
+                          f"year: {result["year"]}\n"
+                          f"author: {result["author"]}\n---")
+                else:
+                    print("---\nИскомая книга не найдена\n---")
             elif choose == 5:
                 print(creator.save_to_json())
             elif choose == 6:
